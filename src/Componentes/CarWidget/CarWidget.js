@@ -1,8 +1,8 @@
-const CarWidget = () =>{
+const CarWidget = (quantity) =>{
+    console.log(quantity);
+
     return (
-        <>
-            <img src="img/ico/shopping-cart.png" alt="CarShop" />(10)
-        </>
+        <p><img src="img/ico/shopping-cart.png" alt="CarShop"/>(0)</p>
     )
 }
 
