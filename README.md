@@ -1,9 +1,17 @@
-# Uso
+# Running Locally
+$ git clone https://github.com/IvanAntonioZamora/Ecommerce
+$ cd coder-app
+$ npm install
+$ npm run dev
+# Use
     path='/' Muestra el menu principal.
     path='/list' Lista de todos los articulos y acceso al detalle.
     path='/category' Muestra las categorias por las que se pueden filtrar.
     path='/category/:categoryId' Muestra la categoria filtrada.
     path='/detail/:productId' Muestra el detalle del Item.
+
+# GIF
+https://drive.google.com/file/d/1waPrS1pAM6IkiVpVOJ56q0WT8jpJyDyR/view?usp=sharing
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

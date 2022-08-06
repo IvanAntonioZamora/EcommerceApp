@@ -5,7 +5,6 @@ const Counter = ( {stock,onAdd} ) =>{
     const [count, setCount] = useState(1)
 
         useEffect(() =>{
-            console.log("Se ejecuta despues");
         },[])
     
         const increment = () =>{
