@@ -1,18 +1,31 @@
-import Counter from "../Counter/Counter"
-import CarWidget from "../CarWidget/CarWidget"
+import { Link } from 'react-router-dom'
 
 const Item = ({product}) =>{
     return(
-        <div className="card" style={{ width: "18rem"}}>
-            <img src={product.thumbnailUrl} className="card-img-top" alt={product.title} />
-                <div className="card-body">
-                    <h5 className="card-title">{product.title}</h5>
-                    <p className="card-text">{product.description}</p>
-                    <button className="btn btn-secondary btn-sm ms-3" type="button">Ver Detalle</button>
-                    <p className="card-text">Stock disponible: {product.stock}</p>
-                    <Counter stock={product.stock} onAdd={CarWidget}/>
+        <div className="mx-2 mt-2 card-group" style={{width: "390px"}}>
+            <div className="card text-start mb-3">
+                <div className="row g-0">
+                    <div className="col-6 col-md-6">
+                        <img src="../img/assets/Música.jpg" className="card-img-top" alt={product.title} style={{width: "12rem",height: "13rem"}}/>
+                    </div>
+                    <div className="col-6 col-md-6 card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 className="card-title pb-1">{product.title}</h5>
+                                <h6 className="card-subtitle text-muted mb-2">{product.genero}</h6>
+                            </div>
+                            <div>
+                                <p className="fst-italic card-text mb-3">Artista: {product.artist}</p>
+                            </div>
+                            <div className="d-flex justify-content-end">
+                                <Link to={`/detail/${product.id}`} className="btn btn-outline-primary btn-sm">Ver Detalle</Link>
+                            </div>
+                    </div>
+                    <div className="card-footer">
+                        <p className="card-text text-center">Stock disponible: {product.stock}</p>
+                    </div>
                 </div>
-        </div>       
+            </div>
+        </div>
     )
 }
 

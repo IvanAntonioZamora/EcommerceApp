@@ -1,3 +1,9 @@
+# Uso
+    path='/' Muestra el menu principal.
+    path='/list' Lista de todos los articulos y acceso al detalle.
+    path='/category' Muestra las categorias por las que se pueden filtrar.
+    path='/category/:categoryId' Muestra la categoria filtrada.
+    path='/detail/:productId' Muestra el detalle del Item.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

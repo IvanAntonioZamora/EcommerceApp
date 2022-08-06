@@ -1,4 +1,5 @@
 import { useState,useEffect } from 'react'
+
 const Counter = ( {stock,onAdd} ) =>{
 
     const [count, setCount] = useState(1)
@@ -20,13 +21,15 @@ const Counter = ( {stock,onAdd} ) =>{
 
     return (
         <div>
-            <div className="d-inline-flex">
-                <button onClick={decrement} className="btn" type="button"><img src="img\ico\boton-menos.png" alt="Menos"/></button>
-                <h1 className="text-center">{count}</h1>
-                <button onClick={increment} className="btn ms-3" type="button"><img src="img\ico\mas.png" alt="Mas"/></button>
-            </div>
-            <div>
-                <button onClick={()=>onAdd(count)} className="btn btn-secondary btn-sm ms-3" type="button">Agregar</button>
+            <div className="row text-center">
+                <div className="col-6 d-flex justify-content-center">
+                    <div className="col-4"><button onClick={decrement} className="btn" type="button">-</button></div>
+                    <div className="col-4"><h3 className="text-center">{count}</h3></div>
+                    <div className="col-4"><button onClick={increment} className="btn" type="button">+</button></div>
+                </div>
+                <div className="col-6">
+                    <button onClick={()=>onAdd(count)} className="btn btn-light btn-sm ms-3" type="button"><img className="me-3" src="../img/ico/anadir-al-carrito.png" alt="Carrito"/>Agregar</button>
+                </div>
             </div>
         </div>  
     )
