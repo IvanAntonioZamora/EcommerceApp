@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { CartContext } from '../../App'
+import CartContext from '../../Context/Context'
 
 const InputCount = ({onConfirm, stock, initial = 1}) => {
     const [count, setCount] = useState(initial)

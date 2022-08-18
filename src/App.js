@@ -1,34 +1,16 @@
 import './App.css';
-import { useState, createContext } from 'react';
 import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer';
 import Category from './Componentes/Category/Category';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Componentes/Home/Home';
-
-export const CartContext = createContext()
+import {CartContextProvide} from './Context/Context';
 
 function App() {
-
-  const [cart, setCart] = useState([])
-  console.log(cart);
-  const addItem = (productToAdd) =>{
-    setCart([...cart, productToAdd])
-  }
-
-  const getQuantity = () =>{
-    let accu = 0
-
-    cart.forEach(prod => {
-      accu += prod.quantity
-    })
-    return accu
-  }
-
   return (
       <div className="App">
-        <CartContext.Provider value={{ cart, addItem, getQuantity }}>
+        <CartContextProvide>
           <BrowserRouter>
               <Routes>
                 <Route path='/' element={<Home />} />
@@ -39,7 +21,7 @@ function App() {
                 <Route path='*' element={<h1 className='text-center'>404 NOT FOUND</h1>} />
               </Routes>
           </BrowserRouter>
-        </CartContext.Provider>
+        </CartContextProvide>
       </div>
   );
 }
