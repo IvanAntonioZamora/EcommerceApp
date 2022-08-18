@@ -19,7 +19,7 @@ const InputCount = ({onConfirm, stock, initial = 1}) => {
     )
 }
 
-const ButtonCount = ({ onConfirm, stock, initial = 1 }) => {
+const ButtonCount = ({ onConfirm, stock, initial = 1}) => {
     const [count, setCount] = useState(initial)
 
     const increment = () => {
@@ -49,7 +49,7 @@ const ItemDetail = ({id, albumId, title, artist, genero, description, price, pri
     const [inputType, setInputType] = useState('button')
     const [quantityToAdd, setQuantityToAdd] = useState(0)
 
-    const { addItem } = useContext(CartContext)
+    const { addItem, getProductQuantity } = useContext(CartContext)
 
     const handleOnAdd = (quantity) => {
         setQuantityToAdd(quantity)
@@ -60,6 +60,7 @@ const ItemDetail = ({id, albumId, title, artist, genero, description, price, pri
         addItem(productToAdd)
     }
 
+    const productQuantity = getProductQuantity(id)
     const Count = inputType === 'button' ? ButtonCount : InputCount
 
     return (
@@ -73,7 +74,7 @@ const ItemDetail = ({id, albumId, title, artist, genero, description, price, pri
             <h5 className="text-star" >Descripcion: { description }</h5>
             {
                     quantityToAdd === 0 ? (
-                        <Count onConfirm={handleOnAdd} stock={stock} />
+                        <Count onConfirm={handleOnAdd} stock={stock} initial={productQuantity}/>
                     ) : (
                         <Link to='/cart'>Finalizar compra</Link>
                     )
