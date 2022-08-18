@@ -36,7 +36,7 @@ const ItemListContainer = ({greeting}) =>{
                     </form>
                 </div>
                 <div className="bg-opacity-10 mx-3 rounded-4">
-                    <h2 className="text-body">{greeting}</h2>
+                    <h2 className="text-body">{greeting}/{categoryId}</h2>
                 </div>
                 <ItemList  products={products}/>
                 <Footer/>       

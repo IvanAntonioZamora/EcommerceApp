@@ -45,14 +45,17 @@ const ButtonCount = ({ onConfirm, stock, initial = 1 }) => {
     )
 }
 
-const ItemDetail = (products) =>{
+const ItemDetail = ({id, albumId, title, artist, genero, description, price, price2, stock, addItem}) =>{
     const [inputType, setInputType] = useState('button')
     const [quantityToAdd, setQuantityToAdd] = useState(0)
 
     const handleOnAdd = (quantity) => {
-        console.log('agregue al carrito')
-        console.log(quantity)
         setQuantityToAdd(quantity)
+        const productToAdd = {
+            id, albumId, title, price2, quantity
+        }
+
+        addItem(productToAdd)
     }
 
     const Count = inputType === 'button' ? ButtonCount : InputCount
@@ -60,15 +63,15 @@ const ItemDetail = (products) =>{
     return (
         <>
             <button onClick={() => setInputType(inputType === 'button' ? 'input' : 'button')}>{inputType === 'button' ? 'pasar a input' : 'pasar a button'}</button>
-            <h5 className="text-star" >Album: { products.title }</h5>
-            <h5 className="text-star" >Artista: { products.artist }</h5>
-            <h5 className="text-star" >Genero: { products.genero }</h5>
-            <h5 className="text-star" >Precio: { products.price }</h5>
-            <h5 className="text-star" >Stock: { products.stock }</h5>
-            <h5 className="text-star" >Descripcion: { products.description }</h5>
+            <h5 className="text-star" >Album: { title }</h5>
+            <h5 className="text-star" >Artista: { artist }</h5>
+            <h5 className="text-star" >Genero: { genero }</h5>
+            <h5 className="text-star" >Precio: { price }</h5>
+            <h5 className="text-star" >Stock: { stock }</h5>
+            <h5 className="text-star" >Descripcion: { description }</h5>
             {
                     quantityToAdd === 0 ? (
-                        <Count onConfirm={handleOnAdd} stock={products.stock} />
+                        <Count onConfirm={handleOnAdd} stock={stock} />
                     ) : (
                         <Link to='/cart'>Finalizar compra</Link>
                     )

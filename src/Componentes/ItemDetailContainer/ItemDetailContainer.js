@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer"
 import { useParams } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({addItem}) => {
 
     const [product, setProduct] = useState()
     const { productId } = useParams()
@@ -25,8 +25,8 @@ const ItemDetailContainer = () => {
         <>
             <Navbar/>
             <div className="mx-3">
-                <h2>Detalle</h2>
-                <ItemDetail {...product}/>
+                <h2>DETALLE</h2>
+                <ItemDetail {...product} addItem={addItem}/>
             </div>
             <Footer/>
         </>
