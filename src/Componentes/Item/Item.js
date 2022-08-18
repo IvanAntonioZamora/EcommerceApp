@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 
 const Item = ({id, albumId, title, artist, genero, description, url, thumbnailUrl, price, stock}) =>{
+
+
     return(
         <div className="mx-2 mt-2 card-group" style={{width: "390px"}}>
             <div className="card text-start mb-3">

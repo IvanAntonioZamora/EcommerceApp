@@ -1,6 +1,7 @@
 import CarWidget from "../CarWidget/CarWidget"
 import { Link } from 'react-router-dom'
-const Navbar = ({product}) =>{
+
+const Navbar = () =>{
     return(
         <div>
             <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom mx-3">
@@ -13,7 +14,7 @@ const Navbar = ({product}) =>{
                     <li className="nav-item"><Link to='/list' className="nav-link">Lista de Vinilos</Link></li>
                     <li className="nav-item"><Link to='/category' className="nav-link">Por Genero</Link></li>
                     <li className="nav-item"><a href="index.html" className="nav-link">Contacto</a></li>
-                    <li className="nav-item"><a href="index.html" className="nav-link"><CarWidget /></a></li>
+                    <li className="nav-item"><CarWidget /></li>
                 </ul>
             </header>
         </div>

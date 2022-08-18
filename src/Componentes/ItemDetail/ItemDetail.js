@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-// import Counter from "../Counter/Counter"
-// import CarWidget from "../CarWidget/CarWidget"
+import { CartContext } from '../../App'
+
 const InputCount = ({onConfirm, stock, initial = 1}) => {
     const [count, setCount] = useState(initial)
 
@@ -45,9 +45,11 @@ const ButtonCount = ({ onConfirm, stock, initial = 1 }) => {
     )
 }
 
-const ItemDetail = ({id, albumId, title, artist, genero, description, price, price2, stock, addItem}) =>{
+const ItemDetail = ({id, albumId, title, artist, genero, description, price, price2, stock}) =>{
     const [inputType, setInputType] = useState('button')
     const [quantityToAdd, setQuantityToAdd] = useState(0)
+
+    const { addItem } = useContext(CartContext)
 
     const handleOnAdd = (quantity) => {
         setQuantityToAdd(quantity)
