@@ -14,7 +14,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/list' element={<ItemListContainer greeting="Vinilos"/>} />
               <Route path='/category' element={<Category greeting="Generos"/>} />
-              <Route path='/category/:categoryId' element={<ItemListContainer greeting="Vinilos Filtrado" />} />
+              <Route path='/category/:categoryId' element={<ItemListContainer greeting="Vinilos" />} />
               <Route path='/detail/:productId' element={<ItemDetailContainer />} />
               <Route path='*' element={<h1 className='text-center'>404 NOT FOUND</h1>} />
             </Routes>
