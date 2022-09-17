@@ -48,7 +48,6 @@ export const CartContextProvide =( {children} ) =>{
 
   const getProductQuantity = (id) =>{
     const product = cart.find(prod => prod.id === id)
-    console.log( product?.quantity )
     return product?.quantity
   }
 

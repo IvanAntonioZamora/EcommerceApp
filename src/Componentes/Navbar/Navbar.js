@@ -13,7 +13,6 @@ const Navbar = () =>{
                     <li className="nav-item"><NavLink to='/' className="nav-link" aria-current="page">Home</NavLink></li>
                     <li className="nav-item"><NavLink to='/list' className="nav-link">Lista de Vinilos</NavLink></li>
                     <li className="nav-item"><NavLink to='/category' className="nav-link">Por Genero</NavLink></li>
-                    <li className="nav-item"><a href="index.html" className="nav-link">Contacto</a></li>
                 </ul>
                 <CarWidget />
             </header>

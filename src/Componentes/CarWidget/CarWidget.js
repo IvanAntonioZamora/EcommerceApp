@@ -7,8 +7,10 @@ const CarWidget = () =>{
     const { getQuantity } = useContext(CartContext)
     const quantity = getQuantity()
 
+    if (quantity === 0) return
+
     return (
-        <Link to='/cart' className="CartWidget">
+        <Link to='/cart' className="CartWidget mx-3">
             <img src="../img/ico/shopping-cart.png" alt="CarShop"/> {quantity}
         </Link>
     )

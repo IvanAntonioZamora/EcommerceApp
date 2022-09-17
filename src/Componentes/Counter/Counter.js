@@ -35,3 +35,4 @@ const Counter = ( {stock,onAdd} ) =>{
 
 }
 export default Counter
+

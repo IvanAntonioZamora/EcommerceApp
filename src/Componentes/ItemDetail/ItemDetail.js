@@ -1,9 +1,14 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import CartContext from '../../Context/Context'
+import NotificationContext from '../../Context/Notification'
 
 const InputCount = ({onConfirm, stock, initial = 1}) => {
     const [count, setCount] = useState(initial)
+
+    useEffect(() => {
+        setCount(initial)
+    }, [initial])
 
     const handleChange = (e) => {
         if(e.target.value <= stock) {
@@ -21,6 +26,10 @@ const InputCount = ({onConfirm, stock, initial = 1}) => {
 
 const ButtonCount = ({ onConfirm, stock, initial = 1}) => {
     const [count, setCount] = useState(initial)
+
+    useEffect(() => {
+        setCount(initial)
+    }, [initial])
 
     const increment = () => {
         if(count < stock) {
@@ -51,6 +60,8 @@ const ItemDetail = ({id, albumId, title, artist, genero, description, price, pri
 
     const { addItem, getProductQuantity } = useContext(CartContext)
 
+    const {setNotification} =  useContext(NotificationContext)
+
     const handleOnAdd = (quantity) => {
         setQuantityToAdd(quantity)
         const productToAdd = {
@@ -58,6 +69,7 @@ const ItemDetail = ({id, albumId, title, artist, genero, description, price, pri
         }
 
         addItem(productToAdd)
+        setNotification('success', `Se egregaron ${quantity} discos de ${title}`)
     }
 
     const productQuantity = getProductQuantity(id)
