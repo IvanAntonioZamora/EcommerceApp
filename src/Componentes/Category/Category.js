@@ -11,14 +11,36 @@ const Category = ({greeting}) =>{
                 <div className="bg-opacity-10 rounded-4">
                     <h2 className="text-body">{greeting}</h2>
                 </div>
-                <ul>
-                    <li><Link to='/category/ROCK CLÁSICO'>ROCK CLÁSICO</Link></li>
-                    <li><Link to='/category/POP'>POP</Link></li>
-                    <li><Link to='/category/ROCK PESADO'>ROCK PESADO</Link></li>
-                    <li><Link to='/category/ALTERNATIVO & INDIE'>ALTERNATIVO & INDIE</Link></li>
-                    <li><Link to='/category/EN ESPAÑOL'>EN ESPAÑOL</Link></li>
-                    <li><Link to='/category/REGGAE'>REGGAE</Link></li>
-                </ul>
+                <div className="card mx-4 my-1 text-uppercase">
+                    <div className="card-body">
+                        <Link className='text-decoration-none' to='/category/ROCK CLÁSICO'>ROCK CLÁSICO</Link>
+                    </div>
+                </div> 
+                <div className="card mx-4 my-1 text-uppercase">
+                    <div className="card-body">
+                        <Link className='text-decoration-none' to='/category/POP'>POP</Link>
+                    </div>
+                </div> 
+                <div className="card mx-4 my-1 text-uppercase">
+                    <div className="card-body">
+                        <Link className='text-decoration-none' to='/category/ROCK PESADO'>ROCK PESADO</Link>
+                    </div>
+                </div>
+                <div className="card mx-4 my-1 text-uppercase">
+                    <div className="card-body">
+                        <Link className='text-decoration-none' to='/category/ALTERNATIVO & INDIE'>ALTERNATIVO & INDIE</Link>
+                    </div>
+                </div>
+                <div className="card mx-4 my-1 text-uppercase">
+                    <div className="card-body">
+                        <Link className='text-decoration-none' to='/category/EN ESPAÑOL'>EN ESPAÑOL</Link>
+                    </div>
+                </div>
+                <div className="card mx-4 my-1 text-uppercase">
+                    <div className="card-body">
+                        <Link className='text-decoration-none' to='/category/REGGAE'>REGGAE</Link>
+                    </div>
+                </div>
             </div>
             <Footer/>
         </>

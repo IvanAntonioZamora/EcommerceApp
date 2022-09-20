@@ -19,7 +19,7 @@ const Cart = () =>{
         <>
             <Navbar/>
                     <div className="d-flex flex-wrap justify-content-center py-3 mb-4 mx-3">
-                        <div className="col-md-5 col-lg-4 order-md-last">
+                        <div className="col-md-8 col-lg-7 order-md-last">
                             <h4 className="d-flex justify-content-between align-items-center mb-3">
                                 <span className="text-primary">Carrito</span>
                                 <span className="badge bg-primary rounded-pill">{cantidad}</span>

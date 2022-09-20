@@ -10,7 +10,7 @@ const CarWidget = () =>{
     if (quantity === 0) return
 
     return (
-        <Link to='/cart' className="CartWidget mx-3">
+        <Link to='/cart' className="CartWidget mx-3 fw-bold text-decoration-none">
             <img src="../img/ico/shopping-cart.png" alt="CarShop"/> {quantity}
         </Link>
     )

@@ -46,16 +46,21 @@ const ButtonCount = ({ onConfirm, stock, initial = 1}) => {
 
     return (
         <div>
-            <p>{count}</p>
-            <button onClick={decrement}>-</button>
-            <button onClick={increment}>+</button>
-            <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
+            <div className="d-flex justify-content-between align-items-center">
+                <div className="btn-group">
+                  <button type="button" className="btn btn-sm btn-outline-secondary" onClick={decrement}>-</button>
+                  <input type='text'  className='text-center' value={count} disabled/>
+                  <button type="button" className="btn btn-sm btn-outline-secondary" onClick={increment}>+</button>
+                  <button type="button" className="btn btn-sm btn-outline-secondary" onClick={() => onConfirm(count)}>Agregar al carrito</button>
+                </div>
+                {/* <small className="text-muted">{count}</small> */}
+            </div>
         </div>
     )
 }
 
 const ItemDetail = ({id, albumId, title, artist, genero, description, price, price2, stock}) =>{
-    const [inputType, setInputType] = useState('button')
+    // const [inputType, setInputType] = useState('button')
     const [quantityToAdd, setQuantityToAdd] = useState(0)
 
     const { addItem, getProductQuantity } = useContext(CartContext)
@@ -73,26 +78,28 @@ const ItemDetail = ({id, albumId, title, artist, genero, description, price, pri
     }
 
     const productQuantity = getProductQuantity(id)
-    const Count = inputType === 'button' ? ButtonCount : InputCount
+    // const Count = inputType === 'button' ? ButtonCount : InputCount
 
     return (
         <>
-            <button onClick={() => setInputType(inputType === 'button' ? 'input' : 'button')}>{inputType === 'button' ? 'pasar a input' : 'pasar a button'}</button>
-            <h5 className="text-star" >Album: { title }</h5>
-            <h5 className="text-star" >Artista: { artist }</h5>
-            <h5 className="text-star" >Genero: { genero }</h5>
-            <h5 className="text-star" >Precio: { price }</h5>
-            <h5 className="text-star" >Stock: { stock }</h5>
-            <h5 className="text-star" >Descripcion: { description }</h5>
-            {
+            <div className="card mx-1" style={{width:"30rem"}}>
+                <div className="card-body">
+                    <h5 className="card-title">Album: { title }</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">Artista: { artist }</h6>
+                    <h6 className="card-subtitle mb-2 text-muted">Genero: { genero }</h6>
+                    <h6 className="card-subtitle mb-2 text-muted">Precio: { price }</h6>
+                    <h6 className="card-subtitle mb-2 text-muted">Stock: { stock }</h6>
+                    <p className="card-text text-center">Descripcion: { description }</p>
+                    {
                     quantityToAdd === 0 ? (
-                        <Count onConfirm={handleOnAdd} stock={stock} initial={productQuantity}/>
+                        <ButtonCount onConfirm={handleOnAdd} stock={stock} initial={productQuantity}/>
                     ) : (
-                        <Link to='/cart'>Finalizar compra</Link>
+                        <Link className="card-link" to='/cart'>Finalizar compra</Link> 
                     )
             }
-
-            {/* <Counter stock={products.stock} onAdd={CarWidget}/>          */}
+                </div>
+            </div>             
+            {/* <button onClick={() => setInputType(inputType === 'button' ? 'input' : 'button')}>{inputType === 'button' ? 'pasar a input' : 'pasar a button'}</button> */}
         </>
     )
 }
