@@ -8,7 +8,7 @@ const products =[
         description: "Greatest Hits es el primer álbum compilatorio de la banda de rock Queen, aparecido en 1981. En él se reúnen los éxitos de la banda entre 1973 y 1981. Llama la atención que la banda haya marginado a su disco debut de la lista de temas del álbum, esto probablemente se haya debido a que “Queen I” no logró ningún gran hit comercial al margen de los temas considerados como clásicos por los fanes, como “Keep Yourself Alive” o “Liar”.",
         url: "https://via.placeholder.com/600/92c952",
         thumbnailUrl: "https://via.placeholder.com/150/92c952",
-        price: "$ 1,150.00",
+        c: "$ 1,150.00",
         price2: "1150",
         stock: "3"
       },

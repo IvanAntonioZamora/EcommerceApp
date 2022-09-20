@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import CartContext from '../../Context/Context'
 import NotificationContext from '../../Context/Notification'
 
-const InputCount = ({onConfirm, stock, initial = 1}) => {
+const InputCount = ({onConfirm, stock, initial = 0}) => {
     const [count, setCount] = useState(initial)
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const ButtonCount = ({ onConfirm, stock, initial = 1}) => {
     }
 
     const decrement = () => {
-        if (count > 1) {
+        if (count > 0) {
             setCount(count - 1)    
         }  
     }

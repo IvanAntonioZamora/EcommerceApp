@@ -9,8 +9,8 @@ const Cart = () =>{
     const cantidad = getQuantity()
     const sumPrice = () =>{
         let accu = 0
-        cart.forEach(prod => {
-            accu = parseInt(accu) + parseInt(prod.price2 * prod.quantity)
+        cart.forEach(prod => {  
+                accu = parseInt(accu) + parseInt(prod.price2 * prod.quantity)
         })
         return accu
     }
