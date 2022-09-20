@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Componentes/Home/Home';
 import {CartContextProvide} from './Context/Context';
 import {NotificationProvider} from './Context/Notification';
-import Cart from './Componentes/CartView/CartView';
+import Cart from './Componentes/CartView/Cart';
 
 function App() {
   
