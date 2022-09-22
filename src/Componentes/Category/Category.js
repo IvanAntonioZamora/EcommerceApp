@@ -7,8 +7,8 @@ const Category = ({greeting}) =>{
     return(
         <>
             <Navbar/>
-            <div className="mx-3">
-                <div className="bg-opacity-10 rounded-4">
+            <div className="mx-3 mb-5">
+                <div className="bg-opacity-10 rounded-4 mb-5">
                     <h2 className="text-body">{greeting}</h2>
                 </div>
                 <div className="card mx-4 my-1 text-uppercase">

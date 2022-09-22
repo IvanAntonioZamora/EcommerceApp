@@ -4,19 +4,24 @@ import { useContext} from "react"
 import CartContext from "../../Context/Context"
 import CartItem from '../CartItem/CartItem'
 import { Link } from 'react-router-dom'
+import NotificationContext from '../../Context/Notification'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () =>{
 
     const { cart, clearCart, getQuantity, getTotal} = useContext(CartContext)
-
-    
+    const {setNotification} =  useContext(NotificationContext)
+   
     const totalQuantity = getQuantity()
     const total = getTotal()
+    const navigate = useNavigate()
 
     if(totalQuantity === 0) {
-        return (
-            <h1>No hay items en el carrito</h1>
-        )
+        setNotification('danger', `No hay items en el carrito`)
+            navigate('/list')
+        // return (
+        //     <h1>No hay items en el carrito</h1>
+        // )
     }
 
     return (
@@ -28,7 +33,9 @@ const Cart = () =>{
                                 <span className="text-primary">Carrito</span>
                                 <span className="badge bg-primary rounded-pill">{totalQuantity}</span>
                             </h4>
-                        {cart.map(p => <CartItem key={p.id} {...p}/>)}
+                            <ul className="list-group mb-1">
+                                {cart.map(p => <CartItem key={p.id} {...p}/>)}
+                            </ul>
                             <ul className="list-group mb-3">
                                 <li className="list-group-item d-flex justify-content-between">
                                     <span>Total (MXN)</span>

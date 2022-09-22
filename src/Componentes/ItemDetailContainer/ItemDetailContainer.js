@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
             <Navbar/>
             <div className="mx-3">
                 <h2>DETALLE</h2>
-                <div className="my-3 mx-3 d-flex align-self-center">
+                <div className="my-3 mx-3 d-flex justify-content-center">
                     <ItemDetail {...product}/>
                 </div>
             </div>

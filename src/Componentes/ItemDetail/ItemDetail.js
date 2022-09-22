@@ -82,7 +82,7 @@ const ItemDetail = ({id, albumId, title, artist, genero, description, price, pri
 
     return (
         <>
-            <div className="card mx-1" style={{width:"30rem"}}>
+            <div className="card mx-1" style={{width:"50rem"}}>
                 <div className="card-body">
                     <h5 className="card-title">Album: { title }</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Artista: { artist }</h6>
@@ -90,13 +90,15 @@ const ItemDetail = ({id, albumId, title, artist, genero, description, price, pri
                     <h6 className="card-subtitle mb-2 text-muted">Precio: { price }</h6>
                     <h6 className="card-subtitle mb-2 text-muted">Stock: { stock }</h6>
                     <p className="card-text text-center">Descripcion: { description }</p>
-                    {
-                    quantityToAdd === 0 ? (
-                        <ButtonCount onConfirm={handleOnAdd} stock={stock} initial={productQuantity}/>
-                    ) : (
-                        <Link className="card-link" to='/cart'>Finalizar compra</Link> 
-                    )
-            }
+                    <div className='d-flex justify-content-center'>
+                        {
+                        quantityToAdd === 0 ? (
+                            <ButtonCount onConfirm={handleOnAdd} stock={stock} initial={productQuantity}/>
+                        ) : (
+                            <Link className="card-link" to='/cart'>Finalizar compra</Link> 
+                        )
+                        }
+                    </div>
                 </div>
             </div>             
             {/* <button onClick={() => setInputType(inputType === 'button' ? 'input' : 'button')}>{inputType === 'button' ? 'pasar a input' : 'pasar a button'}</button> */}

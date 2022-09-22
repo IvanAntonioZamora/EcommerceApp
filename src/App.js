@@ -8,6 +8,7 @@ import Home from './Componentes/Home/Home';
 import {CartContextProvide} from './Context/Context';
 import {NotificationProvider} from './Context/Notification';
 import Cart from './Componentes/CartView/Cart';
+import Checkout from './Componentes/Checkout/Checkout';
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
                   <Route path='/cart' element={<Cart greeting="CARRITO"/>} />
                   <Route path='/category/:categoryId' element={<ItemListContainer greeting="VINILOS" />} />
                   <Route path='/detail/:productId' element={<ItemDetailContainer/>} />
+                  <Route path='/checkout' element={<Checkout />} />
                   <Route path='*' element={<h1 className='text-center'>404 NOT FOUND</h1>} />
                 </Routes>
             </BrowserRouter>
