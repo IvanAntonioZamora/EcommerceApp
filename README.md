@@ -9,7 +9,8 @@ $ npm run dev
     path='/category' Muestra las categorias por las que se pueden filtrar.
     path='/category/:categoryId' Muestra la categoria filtrada.
     path='/detail/:productId' Muestra el detalle del Item.
-
+    path='/cart' Muestra el contenido del carrito.
+    path='/checkout' Crear la Orden del pedido.
 # GIF
 https://drive.google.com/file/d/1waPrS1pAM6IkiVpVOJ56q0WT8jpJyDyR/view?usp=sharing
 # Getting Started with Create React App
