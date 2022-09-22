@@ -12,7 +12,7 @@ $ npm run dev
     path='/cart' Muestra el contenido del carrito.
     path='/checkout' Crear la Orden del pedido.
 # GIF
-https://drive.google.com/file/d/1waPrS1pAM6IkiVpVOJ56q0WT8jpJyDyR/view?usp=sharing
+https://drive.google.com/file/d/1qrt3wX2RZj7GGBeDh46y5ujoIQl8ideu/view?usp=sharing
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
